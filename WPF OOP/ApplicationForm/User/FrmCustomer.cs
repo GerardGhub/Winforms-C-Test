@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Winforms.StoredProcedures;
 using WPF_OOP.ApplicationForm.User.Modals;
@@ -18,6 +20,14 @@ namespace WPF_OOP.ApplicationForm.User
         IStoredProcedures g_objStoredProcCollection = null;
         readonly myclasses xClass = new myclasses();
         readonly UserFile UserFile = new UserFile();
+        public DataSet dSet = new DataSet();
+
+
+        private int currentPageIndex = 0;
+        private int pageSize = 10; // Number of records per page
+        private int totalRecords = 0;
+
+
 
         public FrmCustomer()
         {
@@ -60,8 +70,28 @@ namespace WPF_OOP.ApplicationForm.User
         {
             this.UserFileRepository.GetCustomer(this.DgvUsers);
 
+            this.PaginateData();
+
             this.LblTotalRecords.Text = this.DgvUsers.RowCount.ToString();
         }
+
+        private void PaginateData()
+        {
+            DataTable dataTable = (DataTable)DgvUsers.DataSource;
+            DataView dataView = dataTable.DefaultView;
+
+            dataView.RowFilter = string.Empty; // Clear any previous filters
+
+            DataTable paginatedTable = dataView.ToTable().AsEnumerable()
+                .Skip(currentPageIndex * pageSize)
+                .Take(pageSize)
+                .CopyToDataTable();
+
+            this.DgvUsers.DataSource = paginatedTable;
+            this.LblTotalRecords.Text = $"Page {currentPageIndex + 1} of {Math.Ceiling((double)totalRecords / pageSize)}";
+        }
+
+
 
         private void RadioInActive_CheckedChanged(object sender, EventArgs e)
         {
@@ -206,6 +236,15 @@ namespace WPF_OOP.ApplicationForm.User
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if ((currentPageIndex + 1) * pageSize < totalRecords)
+            {
+                currentPageIndex++;
+                this.PaginateData();
+            }
         }
     }
 }

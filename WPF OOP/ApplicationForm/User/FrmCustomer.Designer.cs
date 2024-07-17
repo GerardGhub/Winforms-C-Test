@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomer));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DgvUsers = new System.Windows.Forms.DataGridView();
+            this.CustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.BtnNew = new System.Windows.Forms.ToolStripButton();
@@ -47,10 +51,6 @@
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.CustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).BeginInit();
             this.panel1.SuspendLayout();
@@ -62,9 +62,9 @@
             // 
             this.groupBox1.Controls.Add(this.DgvUsers);
             this.groupBox1.Location = new System.Drawing.Point(23, 133);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1012, 265);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -82,8 +82,9 @@
             this.Place,
             this.username});
             this.DgvUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvUsers.GridColor = System.Drawing.SystemColors.Control;
             this.DgvUsers.Location = new System.Drawing.Point(2, 15);
-            this.DgvUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DgvUsers.Margin = new System.Windows.Forms.Padding(2);
             this.DgvUsers.MultiSelect = false;
             this.DgvUsers.Name = "DgvUsers";
             this.DgvUsers.ReadOnly = true;
@@ -94,11 +95,43 @@
             this.DgvUsers.TabIndex = 0;
             this.DgvUsers.CurrentCellChanged += new System.EventHandler(this.DgvUsers_CurrentCellChanged);
             // 
+            // CustomerId
+            // 
+            this.CustomerId.DataPropertyName = "CustomerId";
+            this.CustomerId.HeaderText = "CustomerID";
+            this.CustomerId.MinimumWidth = 6;
+            this.CustomerId.Name = "CustomerId";
+            this.CustomerId.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "CustomerName";
+            this.CustomerName.MinimumWidth = 6;
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            // 
+            // Place
+            // 
+            this.Place.DataPropertyName = "Place";
+            this.Place.HeaderText = "Place";
+            this.Place.MinimumWidth = 6;
+            this.Place.Name = "Place";
+            this.Place.ReadOnly = true;
+            // 
+            // username
+            // 
+            this.username.DataPropertyName = "username";
+            this.username.HeaderText = "Column1";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Visible = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.toolStrip2);
             this.panel1.Location = new System.Drawing.Point(26, 64);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 41);
             this.panel1.TabIndex = 5;
@@ -192,7 +225,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(524, 72);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(128, 20);
             this.textBox1.TabIndex = 3;
@@ -203,7 +236,7 @@
             // 
             this.RadioActive.AutoSize = true;
             this.RadioActive.Location = new System.Drawing.Point(6, 19);
-            this.RadioActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RadioActive.Margin = new System.Windows.Forms.Padding(2);
             this.RadioActive.Name = "RadioActive";
             this.RadioActive.Size = new System.Drawing.Size(55, 17);
             this.RadioActive.TabIndex = 8;
@@ -216,7 +249,7 @@
             // 
             this.RadioInActive.AutoSize = true;
             this.RadioInActive.Location = new System.Drawing.Point(94, 19);
-            this.RadioInActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RadioInActive.Margin = new System.Windows.Forms.Padding(2);
             this.RadioInActive.Name = "RadioInActive";
             this.RadioInActive.Size = new System.Drawing.Size(64, 17);
             this.RadioInActive.TabIndex = 9;
@@ -230,7 +263,7 @@
             this.panel2.Controls.Add(this.RadioInActive);
             this.panel2.Controls.Add(this.RadioActive);
             this.panel2.Location = new System.Drawing.Point(406, 10);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(184, 46);
             this.panel2.TabIndex = 10;
@@ -239,7 +272,7 @@
             // TxtSearch
             // 
             this.TxtSearch.Location = new System.Drawing.Point(80, 37);
-            this.TxtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(241, 20);
             this.TxtSearch.TabIndex = 11;
@@ -267,39 +300,7 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // CustomerId
-            // 
-            this.CustomerId.DataPropertyName = "CustomerId";
-            this.CustomerId.HeaderText = "CustomerID";
-            this.CustomerId.MinimumWidth = 6;
-            this.CustomerId.Name = "CustomerId";
-            this.CustomerId.ReadOnly = true;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "CustomerName";
-            this.CustomerName.MinimumWidth = 6;
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
-            // 
-            // Place
-            // 
-            this.Place.DataPropertyName = "Place";
-            this.Place.HeaderText = "Place";
-            this.Place.MinimumWidth = 6;
-            this.Place.Name = "Place";
-            this.Place.ReadOnly = true;
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "username";
-            this.username.HeaderText = "Column1";
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            this.username.Visible = false;
-            // 
-            // FrmUsers
+            // FrmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,8 +316,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FrmUsers";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FrmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUsers";
             this.Load += new System.EventHandler(this.FrmUsers_Load);

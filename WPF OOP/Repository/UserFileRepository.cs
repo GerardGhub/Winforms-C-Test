@@ -58,6 +58,13 @@ namespace WPF_OOP.Repository
 
                 this.xClass.fillDataGridView(DataGridViews, "getcustomcustomer", this.dSet);
 
+                // Ensure that dSet is populated
+                if (this.dSet.Tables.Count > 0)
+                {
+                    DataGridViews.DataSource = this.dSet.Tables[0];
+                }
+
+
                 this.TotalRecords = DataGridViews.RowCount;
             }
             catch (Exception ex)
@@ -72,7 +79,7 @@ namespace WPF_OOP.Repository
             try
             {
 
-                this.xClass.fillDataGridView(DataGridViews, "usersInactive", this.dSet);
+                this.xClass.fillDataGridView(DataGridViews, "customerInactive", this.dSet);
 
                 this.TotalRecords = DataGridViews.RowCount;
             }
