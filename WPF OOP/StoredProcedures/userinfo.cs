@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Winforms.StoredProcedures
 {
     class userinfo
     {
-        //Fucking Declaration
+        //Declaration
         public static int USER_LOG = 0;
         public static int user_id;
         public static string user_name;

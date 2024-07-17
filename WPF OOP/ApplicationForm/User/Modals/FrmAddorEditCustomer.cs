@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winforms.StoredProcedures;
 using WPF_OOP.Interfaces;
@@ -16,7 +10,7 @@ using WPF_OOP.Repository;
 
 namespace WPF_OOP.ApplicationForm.User.Modals
 {
-    public partial class FrmAddorEditUser : Form
+    public partial class FrmAddorEditCustomer : Form
     {
         readonly FrmCustomer ths;
         UserFile UserFile = new UserFile();
@@ -25,7 +19,7 @@ namespace WPF_OOP.ApplicationForm.User.Modals
         IStoredProcedures g_objStoredProcCollection = null;
         readonly myclasses myClass = new myclasses();
         DataSet dSet = new DataSet();
-        public FrmAddorEditUser(FrmCustomer frm,  string Mode)
+        public FrmAddorEditCustomer(FrmCustomer frm,  string Mode)
         {
             InitializeComponent();
             this.ths = frm;
@@ -108,7 +102,7 @@ namespace WPF_OOP.ApplicationForm.User.Modals
                 if (MetroFramework.MetroMessageBox.Show(this, "Are you sure you want to save? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    this.UserRepository.AddUser(0,this.UserFile.User_Rights_Id, this.TxtuserName.Text.Trim(), this.TxtPassword.Text.Trim(),
+                    this.UserRepository.AddUser(0,this.UserFile.CustomerId, this.TxtuserName.Text.Trim(), this.TxtPassword.Text.Trim(),
                         this.TxtFirstName.Text.Trim(), this.UserFile.User_Section, this.UserFile.Receiving_Status, this.UserFile.Position, this.TxtLastName.Text.Trim(), this.UserFile.Department, this.UserFile.Requestor_Type,
                         this.UserFile.Unit, this.UserFile.Gender, "add");
 
@@ -226,7 +220,7 @@ namespace WPF_OOP.ApplicationForm.User.Modals
 
         private void CboUserRole_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            this.UserFile.User_Rights_Id = Convert.ToInt32(this.CboUserRole.SelectedValue);
+            this.UserFile.CustomerId = Convert.ToInt32(this.CboUserRole.SelectedValue);
         }
 
         private void CboDepartment_SelectionChangeCommitted(object sender, EventArgs e)

@@ -94,11 +94,11 @@
     <Compile Include="ApplicationForm\User\FrmCustomer.Designer.cs">
       <DependentUpon>FrmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForm\User\Modals\FrmAddorEditUser.cs">
+    <Compile Include="ApplicationForm\User\Modals\FrmAddorEditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForm\User\Modals\FrmAddorEditUser.Designer.cs">
-      <DependentUpon>FrmAddorEditUser.cs</DependentUpon>
+    <Compile Include="ApplicationForm\User\Modals\FrmAddorEditCustomer.Designer.cs">
+      <DependentUpon>FrmAddorEditCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IStoredProcedures.cs" />
     <Compile Include="Models\UserFile.cs" />
@@ -121,8 +121,8 @@
     <EmbeddedResource Include="ApplicationForm\User\FrmCustomer.resx">
       <DependentUpon>FrmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForm\User\Modals\FrmAddorEditUser.resx">
-      <DependentUpon>FrmAddorEditUser.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForm\User\Modals\FrmAddorEditCustomer.resx">
+      <DependentUpon>FrmAddorEditCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

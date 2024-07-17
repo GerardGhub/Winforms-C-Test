@@ -49,9 +49,7 @@ namespace WPF_OOP
 
         private void TextBoxIsValid()
         {
-
             bool result = (this.TxtUserName.Text == String.Empty || this.TxtPassword.Text == String.Empty)  ?  this.BtnLogin.Enabled = false : this.BtnLogin.Enabled = true;
- 
         }
 
         private void TxtPassword_TextChanged(object sender, EventArgs e)
@@ -71,19 +69,12 @@ namespace WPF_OOP
 
             this.UserFileRepository.LoginValidation(this.TxtUserName.Text.Trim(), this.TxtPassword.Text.Trim()); 
  
-  
-
+ 
 
             if (this.UserFileRepository.dSet.Tables[0].Rows.Count > 0)
             {
                 userinfo.set_user_parameters(this.UserFileRepository.dSet);
                 myglobal.user_password = this.TxtPassword.Text;
-
-                //string winpath = Environment.GetEnvironmentVariable("windir");
-                //string path = System.IO.Path.GetDirectoryName(
-                //System.Windows.Forms.Application.ExecutablePath);
-
-
 
 
                 this.Hide();
@@ -91,14 +82,11 @@ namespace WPF_OOP
                 MainMenu.ShowDialog();
                 this.Close();
 
-                //end of form validation
+
             }
             else
             {
-
-
                 NotAllowToUsedTheSystem();
-
             }
         }
 
@@ -110,7 +98,6 @@ namespace WPF_OOP
             .Show(this, "Sorry! You are not allowed to use this system invalid credentials! ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
            xClass.ClearTxt(this.TxtUserName, this.TxtPassword);
             this.UseEffectMenuLoad();
-
 
         }
 

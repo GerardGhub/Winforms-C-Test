@@ -17,7 +17,7 @@ namespace WPF_OOP.Repository
       IStoredProcedures objStorProc = null;
         int TotalRecords = 0;
 
-        public void ActivateUser(int UserId)
+        public void ActivateCustomer(int UserId)
         {
             this.ConnectionInit();
             this.dSet.Clear();
@@ -44,14 +44,14 @@ namespace WPF_OOP.Repository
                 "add");
         }
 
-        public void DeactivateUser(int UserId)
+        public void DeactivateCustomer(int UserId)
         {
             this.ConnectionInit();
             this.dSet.Clear();
             this.dSet = objStorProc.sp_userfile(UserId, "", "", "", "delete");
         }
 
-        public void GetUsers(DataGridView DataGridViews)
+        public void GetCustomer(DataGridView DataGridViews)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace WPF_OOP.Repository
             }
         }
 
-        public void GetUsersInactive(DataGridView DataGridViews)
+        public void GetCustomerInactive(DataGridView DataGridViews)
         {
             try
             {
@@ -95,14 +95,14 @@ namespace WPF_OOP.Repository
 
         }
 
-        public void SearchActiveUser(string Mode)
+        public void SearchActiveCustomer(string Mode)
         {
             this.ConnectionInit();
             this.dSet.Clear();
             this.dSet = objStorProc.sp_getMajorTables(Mode);
         }
 
-        public void SearchInActiveUser(string Mode)
+        public void SearchInActiveCustomer(string Mode)
         {
             this.ConnectionInit();
             this.dSet.Clear();

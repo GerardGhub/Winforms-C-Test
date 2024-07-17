@@ -41,7 +41,7 @@ namespace WPF_OOP.ApplicationForm.User
             this.BtnNew.Visible = false;
             this.UserFile.Mode = "ADD";
 
-             FrmAddorEditUser  showModal = new FrmAddorEditUser(this, this.UserFile.Mode);
+           FrmAddorEditCustomer  showModal = new FrmAddorEditCustomer(this, this.UserFile.Mode);
             showModal.ShowDialog();
         }
 
@@ -58,7 +58,7 @@ namespace WPF_OOP.ApplicationForm.User
         }
         private void GetActivatedUser()
         {
-            this.UserFileRepository.GetUsers(this.DgvUsers);
+            this.UserFileRepository.GetCustomer(this.DgvUsers);
 
             this.LblTotalRecords.Text = this.DgvUsers.RowCount.ToString();
         }
@@ -71,7 +71,7 @@ namespace WPF_OOP.ApplicationForm.User
 
         private void GetDeactivateUser()
         {
-            this.UserFileRepository.GetUsersInactive(this.DgvUsers);
+            this.UserFileRepository.GetCustomerInactive(this.DgvUsers);
 
             this.LblTotalRecords.Text = this.DgvUsers.RowCount.ToString();
         }
@@ -88,11 +88,11 @@ namespace WPF_OOP.ApplicationForm.User
             {
                 if (this.RadioActive.Checked == true)
                 {
-                    this.UserFileRepository.SearchActiveUser("searchActiveCustomer");
+                    this.UserFileRepository.SearchActiveCustomer("searchActiveCustomer");
                 }
                 else
                 {
-                    this.UserFileRepository.SearchInActiveUser("InactiveUserCurrentCellChanged");
+                    this.UserFileRepository.SearchInActiveCustomer("searchInActiveCustomer");
                 }
             }
             catch (Exception ex)
@@ -100,10 +100,6 @@ namespace WPF_OOP.ApplicationForm.User
 
                 MessageBox.Show(ex.Message);
             }
-
-
-
-
 
         }
 
@@ -150,7 +146,7 @@ namespace WPF_OOP.ApplicationForm.User
                 {
                     if (this.DgvUsers.Rows.Count > 0)
                     {
-                        this.UserFileRepository.DeactivateUser(this.UserFile.Userfile_Id);
+                        this.UserFileRepository.DeactivateCustomer(this.UserFile.CustomerId);
                         this.GetActivatedUser();
                     }
                 }
@@ -166,7 +162,7 @@ namespace WPF_OOP.ApplicationForm.User
                     {
                         if (this.DgvUsers.Rows.Count > 0)
                         {
-                            this.UserFileRepository.ActivateUser(this.UserFile.Userfile_Id);
+                            this.UserFileRepository.ActivateCustomer(this.UserFile.CustomerId);
                            this.GetDeactivateUser();
                     }
                     }
@@ -197,9 +193,9 @@ namespace WPF_OOP.ApplicationForm.User
                     if (this.DgvUsers.CurrentRow.Cells["username"].Value != null)
                     {
 
-                        this.UserFile.Userfile_Id = Convert.ToInt32(this.DgvUsers.CurrentRow.Cells["userfile_id"].Value.ToString());
-                        this.UserFile.Employee_Name = this.DgvUsers.CurrentRow.Cells["employee_name"].Value.ToString();
-                        this.UserFile.Employee_Lastname = this.DgvUsers.CurrentRow.Cells["employee_lastname"].Value.ToString();
+                        this.UserFile.CustomerId = Convert.ToInt32(this.DgvUsers.CurrentRow.Cells["CustomerId"].Value.ToString());
+                        this.UserFile.Employee_Name = this.DgvUsers.CurrentRow.Cells["CustomerName"].Value.ToString();
+                        this.UserFile.Employee_Lastname = this.DgvUsers.CurrentRow.Cells["Place"].Value.ToString();
 
                     }
 

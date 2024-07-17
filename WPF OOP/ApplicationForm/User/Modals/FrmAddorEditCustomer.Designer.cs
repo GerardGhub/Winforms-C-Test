@@ -1,6 +1,6 @@
 ﻿namespace WPF_OOP.ApplicationForm.User.Modals
 {
-    partial class FrmAddorEditUser
+    partial class FrmAddorEditCustomer
     {
         /// <summary>
         /// Required designer variable.

@@ -22,8 +22,6 @@ namespace WPF_OOP
                 if (Environment.OSVersion.Version.Major == 6)
                     //SetProcessDPIAware();
 
-
-
                     System.Windows.Forms.Application.EnableVisualStyles();
                System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
 
