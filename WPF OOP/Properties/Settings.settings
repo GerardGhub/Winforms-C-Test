@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Winforms.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Connection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=DESKTOP-T46SVA2;Initial Catalog=ClarkDB;Integrated Security=SSPI;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
